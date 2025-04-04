@@ -1,0 +1,182 @@
+html {
+    font-family: sans-serif;
+  }
+
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+
+button {
+  margin: 50px;
+  font-size: 20px;
+  background-color: red;
+  transition: background-color 0.3s;
+  animation: vibrate 0.7s ease-in-out infinite;
+}
+
+a {
+  font-size: 20px;
+}
+
+
+a {
+    color: black; /* Черный цвет текста по умолчанию */
+    text-decoration: none; /* Убираем подчеркивание */
+    position: relative; /* Для позиционирования псевдоэлемента */
+}
+
+a::after {
+    content: ''; /* Создаем пустое содержимое для псевдоэлемента */
+    position: absolute;
+    bottom: -2px; /* Сдвигаем подчеркивание немного ниже текста */
+    left: 0;
+    width: 100%; /* Начальная ширина подчеркивания 0 */
+    height: 2px;
+    background-color: green; /* Цвет подчеркивания */
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.6s;
+     /* Плавное изменение ширины transition: width 0.3s ease, center 0.3s ease; */
+}
+
+a:hover {
+    color: green; /* Цвет текста при наведении */
+}
+
+a:hover::after {
+  transform: scaleX(1);
+   /* При наведении ширина подчеркивания становится 100% width: 100%; */
+}
+
+
+button:hover {
+    background-color: green;
+    animation: none;
+}
+@keyframes vibrate {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex; /* Размещаем элементы в строку */
+    align-items: center; /* Выравниваем по вертикали */
+    justify-content: center; /* Центрируем содержимое */
+}
+#ball {
+    
+    width: 150px;
+    height: 100px;
+    background-image: url(./ball.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    animation-name: ball;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.ball {
+    animation: bounce 3s cubic-bezier(0.3, 0.6, 0.4, 1) infinite;
+}
+
+@keyframes ball {
+    0% {
+      top: 0; 
+      animation-timing-function: ease-in;
+    }
+    20% {
+      top: calc(100vh - 280px); 
+      
+      animation-timing-function: ease-out;
+    }
+    30%{
+      top: calc(50vh - 137.5px);
+      animation-timing-function: ease-in;
+    }
+    40%{
+      top: calc(100vh - 280px);
+      animation-timing-function: ease-out;
+    }
+    50%{
+      top: calc(75vh - 206.2px);
+      animation-timing-function: ease-in;
+    }
+    60%{
+      top: calc(100vh - 280px);
+      animation-timing-function: ease-out;
+    }
+    70%{
+      top: calc(87.5vh - 240px);
+      animation-timing-function: ease-in;
+    }
+    80%{
+      top: calc(100vh - 280px);
+      animation-timing-function: ease-out;
+    }
+    90%{
+      top: calc(92vh - 245px);
+      animation-timing-function: ease-in;
+    }
+    100%{
+      top: calc(100vh - 280px);
+    }
+  }
+
+    .newton_cradle {
+      bottom: 20px; 
+      left: calc(50% - 150px);
+      width: 275px; 
+      height: 160px; 
+      padding: 0 0 0 25px;
+    }
+    
+    .ball {
+      z-index: -1; float: left; position: relative;
+      margin-top: 100px; width: 50px; height: 50px;
+      background-color: aqua;
+      border: 1px solid black;
+      border-radius: 100%; 
+      transform-origin: 50% -100px;
+    }
+    
+    .ball::after {
+      content: ''; display: block; position: absolute;
+      top: -100px; left: 24px; height: 100px; width: 1px; background: gray;
+    }
+    
+    .ball:nth-child(1) {animation: ball1 0.5s infinite alternate 0.5s ease-out;}
+    .ball:nth-child(5) {animation: ball5 0.5s infinite alternate ease-out;}
+    
+    @keyframes ball1 {0%,50% {transform: rotate(0);} 100% {transform: rotate(30deg);}}
+    @keyframes ball5 {0%,50% {transform: rotate(0);} 100% {transform: rotate(-30deg);}}
+  

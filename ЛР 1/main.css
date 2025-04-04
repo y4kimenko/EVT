@@ -1,0 +1,70 @@
+
+
+body {
+    padding: 0px 20px 20px 20px;
+    background-color: rgb(170, 179, 180);
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.cadrs > div {
+    height: 250px;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.cadrs > img {
+    height: 100%;
+    margin-right: 10px;
+}
+
+img{
+    width: 400px;
+    height: 350px;
+    border-radius: 15px;
+}
+
+@font-face {
+    font-family: 'a';
+    src: url('y4kimenko.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'aa';
+    src: url('cd2f1-36d91_sunday.ttf'), sans-serif;
+}
+@font-face {
+    font-family: 'aaa';
+    src: url('teddy-bear.ttf'), sans-serif;
+}
+
+.discription1{
+    text-align: left;
+    font-family:'a', sans-serif;
+    font-size: 25px;
+}
+
+.discription2{
+    text-align: center;
+    font-weight: 900;
+    font-family:'aa';
+   
+}
+.discription3{
+    text-align: end;
+    font-family:'aaa', sans-serif;
+    font-size: medium;
+    font-size: 25px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+  
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
