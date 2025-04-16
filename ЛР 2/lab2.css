@@ -3,7 +3,7 @@ html {
   }
 
 header {
-  background: rgb(52, 206, 142);
+  background: rgb(206, 144, 52);
   height: 100px;
 }
 
@@ -34,19 +34,17 @@ a {
 }
 
 a::after {
-    content: ''; /* Создаем пустое содержимое для псевдоэлемента */
-    position: absolute;
-    bottom: -2px; /* Сдвигаем подчеркивание немного ниже текста */
-    left: 0;
-    width: 100%; /* Начальная ширина подчеркивания 0 */
-    height: 2px;
-    background-color: green; /* Цвет подчеркивания */
-    transform-origin: center;
-    transform: scaleX(0);
-    transition: transform 0.6s;
-     /* Плавное изменение ширины transition: width 0.3s ease, center 0.3s ease; */
+  content: ''; /* Создаем пустое содержимое для псевдоэлемента */
+  position: absolute;
+  bottom: -2px; /* Сдвигаем подчеркивание немного ниже текста */
+  left: 0;
+  width: 100%; /* Занимает всю ширину ссылки */
+  height: 2px;
+  background-color: green; /* Зеленый цвет подчеркивания */
+  transform-origin: center;
+  transform: scaleX(0); /* Изначально масштаб по оси X равен 0 (невидим) */
+  transition: transform 0.6s; /* Плавное изменение ширины подчеркивания */
 }
-
 a:hover {
     color: green; /* Цвет текста при наведении */
 }
@@ -92,7 +90,7 @@ body {
 }
 #ball {
     
-    width: 150px;
+    width: 100px;
     height: 100px;
     background-image: url(./ball.png);
     background-size: cover;
@@ -163,7 +161,7 @@ body {
     .ball {
       z-index: -1; float: left; position: relative;
       margin-top: 100px; width: 50px; height: 50px;
-      background-color: aqua;
+      background-color: rgb(11, 141, 39);
       border: 1px solid black;
       border-radius: 100%; 
       transform-origin: 50% -100px;
