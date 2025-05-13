@@ -83,6 +83,7 @@ body {
     background-color: #f0f0f0;
 }
 
+
 .container {
     display: flex; /* Размещаем элементы в строку */
     align-items: center; /* Выравниваем по вертикали */

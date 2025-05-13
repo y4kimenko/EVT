@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Приёмы гибкой вёрстки</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Reveal.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
+
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/monokai.css">
+
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background: #f0f4f8;
+    }
+    .reveal h1, .reveal h2 {
+      color: #2e3440;
+    }
+    .reveal .slides {
+      color: #3b4252;
+    }
+    pre code {
+      font-size: 1em;
+      line-height: 1.4;
+      background: #eceff4 !important;
+      padding: 8px;
+      border-radius: 4px;
+      color: #bf616a !important;
+    }
+    .reveal section {
+      padding: 20px;
+      background: #eceff4;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Слайд 1: Заголовок -->
+      <section data-transition="fade" data-background-color="#88c0d0">
+        <h1>Гибкая вёрстка сайтов</h1>
+        <p>Основные приёмы и методики</p>
+        <aside class="notes">
+          Добро пожаловать! Поговорим о практике создания адаптивных интерфейсов, необходимых инструментах и шаблонах.
+        </aside>
+      </section>
+
+      <!-- Слайд 2: Причины -->
+      <section data-transition="slide" data-background-color="#5e81ac">
+        <h2>Зачем нужна адаптивность?</h2>
+        <ul>
+          <li>Рост мобильного трафика</li>
+          <li>Удобство для всех устройств</li>
+          <li>Плюс в SEO за "mobile-friendly"</li>
+        </ul>
+        <aside class="notes">
+          Обсудим статистику мобильного использования и влияние на поисковую выдачу.
+        </aside>
+      </section>
+
+      <!-- Слайд 3: Метатег viewport -->
+      <section data-transition="zoom" data-background-color="#d08770">
+        <h2>Meta viewport</h2>
+        <pre><code class="language-html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        </code></pre>
+        <aside class="notes">
+          Этот метатег задаёт масштаб страницы и ширину области просмотра под устройство.
+        </aside>
+      </section>
+
+      <!-- Слайд 4: Flexbox и Grid вместе -->
+      <section data-transition="convex" data-background-color="#a3be8c">
+        <h2>Flexbox &amp; Grid</h2>
+        <p>Быстрое выравнивание и сложные макеты</p>
+        <pre><code class="language-css">
+.container-flex {
+  display: flex;
+  gap: 10px;
+}
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+        </code></pre>
+        <aside class="notes">
+          Flexbox удобен для одномерных раскладок, Grid — для двумерных шаблонов с рядами и колонками.
+        </aside>
+      </section>
+
+      <!-- Слайд 5: Media Queries -->
+      <section data-transition="slide" data-background-color="#eceff4">
+        <h2>Медиа-запросы</h2>
+        <pre><code class="language-css">
+@media (min-width: 768px) {
+  .content {
+    padding: 20px;
+  }
+}
+        </code></pre>
+        <aside class="notes">
+          Используем breakpoints от мобильных к десктопным, ориентируясь на контент.
+        </aside>
+      </section>
+
+      <!-- Слайд 6: Mobile-first -->
+      <section data-transition="concave" data-background-color="#bf616a">
+        <h2>Подход Mobile-First</h2>
+        <ol>
+          <li>Базовые стили для смартфонов</li>
+          <li>Добавляем стили для планшетов</li>
+          <li>И завершаем стили для больших экранов</li>
+        </ol>
+        <aside class="notes">
+          Сначала лёгкая версия для мобильных, потом улучшаем для планшетов и десктопов.
+        </aside>
+      </section>
+
+      <!-- Слайд 7: Полезные приёмы -->
+      <section data-transition="fade" data-background-color="#8fbcbb">
+        <h2>Дополнительные методы</h2>
+        <ul>
+          <li>Относительные единицы: rem, vw, %</li>
+          <li>CSS-фреймворки: Foundation, Bulma</li>
+          <li>Эмуляция устройств в DevTools</li>
+        </ul>
+        <aside class="notes">
+          Рассмотрим ещё инструменты и как практиковать тестирование на разных устройствах.
+        </aside>
+      </section>
+
+      <!-- Слайд 8: Заключение -->
+      <section data-transition="slide" data-background-color="#88c0d0">
+        <h2>Выводы</h2>
+        <p>Гибкая вёрстка — залог комфорта пользователей и роста проектов</p>
+        <aside class="notes">
+          Подчеркните значимость адаптивности и предложите план дальнейшего изучения.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealNotes, RevealHighlight ],
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      transition: 'slide',
+      center: true,
+    });
+  </script>
+</body>
+</html>
